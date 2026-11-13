@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRUE ADAMS UNIVERSE</title>
+<style>
+:root{--gold:#f5d83d;--gold2:#25bdb3;--ink:#101313;--panel:#202727;--muted:#e9dfc7;--turquoise:#35c9bd;--bandage:#f2e7cb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#285b56 0,#172725 35%,#090e0e 78%);color:#fff9e9;font-family:Georgia,"Times New Roman",serif}
+header{position:sticky;top:0;z-index:10;background:#090909eF;border-bottom:2px solid var(--turquoise);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;padding:14px 6%;gap:16px}
+.logo{font-weight:bold;letter-spacing:2px;color:var(--gold)}nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:var(--bandage);text-decoration:none;font:14px Arial}nav a:hover{color:#fff}
+.hero{min-height:78vh;display:grid;place-items:center;text-align:center;padding:80px 20px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:420px;height:420px;border:2px solid #35c9bd55;border-radius:50%;box-shadow:0 0 100px #35c9bd40,inset 0 0 80px #f5d83d20}
+.crown{font-size:64px;filter:drop-shadow(0 0 18px #e8b84b);position:relative}
+h1{font-size:clamp(36px,7vw,76px);letter-spacing:5px;color:var(--gold);text-shadow:0 3px 30px #d99b3d66;margin:18px 0}
+.subtitle{font:16px Arial;color:var(--muted);letter-spacing:3px;text-transform:uppercase}
+.btn{display:inline-block;border:1px solid var(--turquoise);color:#101313;background:linear-gradient(135deg,#fff08a,#35c9bd);padding:13px 22px;border-radius:4px;font-weight:bold;text-decoration:none;cursor:pointer;margin:12px 6px}
+.btn.secondary{background:transparent;color:var(--gold)}
+section{padding:65px 7%;max-width:1200px;margin:auto}
+h2{text-align:center;color:var(--gold);font-size:32px;letter-spacing:2px;margin:0 0 12px}
+.lead{text-align:center;color:var(--muted);font:15px Arial;margin:0 auto 32px;max-width:650px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:linear-gradient(145deg,#263b37,#141d1c);border:1px solid #35c9bd66;padding:22px;border-radius:9px;box-shadow:0 12px 35px #0008;transition:.2s}
+.card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.card.character{cursor:pointer;position:relative}.card.character:after{content:"ОТКРЫТЬ ПРОФИЛЬ ↗";display:inline-block;margin-top:15px;color:var(--turquoise);font: bold 11px Arial;letter-spacing:1px}.card.character:focus{outline:3px solid var(--gold);outline-offset:3px}
+.emblem{font-size:42px;margin-bottom:12px}.card h3{color:var(--gold);margin:0 0 9px}.card p{color:#d2c5a4;font:14px/1.6 Arial;margin:0}
+.banner{border:1px solid #b68a3c;background:linear-gradient(120deg,#26443f,#101717);padding:30px;border-radius:10px;text-align:center}
+.banner strong{color:var(--gold);font-size:22px}
+footer{text-align:center;border-top:1px solid var(--turquoise);padding:28px;color:#98845d;font:12px Arial}
+.mumka-banner{border:2px solid var(--turquoise);background:radial-gradient(circle at 50% 0,#3a766d,#172321 72%)}.mumka-face{font-size:76px;filter:drop-shadow(0 0 18px #f5d83d)}
+.profile-modal{display:none;position:fixed;inset:0;z-index:60;background:#050b0bee;backdrop-filter:blur(9px);padding:16px;align-items:center;justify-content:center;overflow:auto}.profile-modal.open{display:flex}.profile-card{position:relative;width:min(620px,100%);padding:30px 22px;text-align:center;border:2px solid var(--turquoise);border-radius:18px;background:linear-gradient(145deg,#294640,#111a19);box-shadow:0 0 55px #35c9bd35}.profile-close{position:absolute;right:12px;top:12px;border:1px solid var(--turquoise);background:#10201e;color:#fff;border-radius:9px;padding:9px 13px;font-size:20px}.profile-icon{font-size:76px}.profile-tag{font:11px Arial;letter-spacing:3px;color:var(--turquoise);margin-top:8px}.profile-card h2{margin:8px 0 14px;color:var(--gold)}.profile-card p{font:15px/1.7 Arial;color:var(--bandage)}.profile-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:20px 0}.profile-facts div{padding:13px;border-radius:10px;background:#0d1918;border:1px solid #35c9bd66;font:13px/1.5 Arial;color:#f4ebd5}.profile-facts b{display:block;color:var(--gold);margin-bottom:5px}
+#notice{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#241a08;border:1px solid var(--gold);color:#ffe7a3;padding:12px 18px;border-radius:8px;display:none;z-index:20;box-shadow:0 8px 30px #000}
+@media(max-width:650px){header{align-items:flex-start;flex-direction:column}nav{gap:12px}.hero{min-height:68vh}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">🟡 TRUE ADAMS · MUMKA EDITION</div>
+  <nav><a href="#home">Главная</a><a href="#heroes">Персонажи</a><a href="#titans">Титаны</a><a href="#allies">Союзники</a><a href="#lore">История</a><a href="#mumka">Мумка</a></nav>
+</header>
+<main>
+<section class="hero" id="home">
+ <div>
+  <div class="crown">🟡🩹</div>
+  <div class="subtitle">Империя начинается здесь</div>
+  <h1>TRUE ADAMS<br>UNIVERSE</h1>
+  <p class="lead">Вселенная героев, титанов и самой загадочной Мумки!</p>
+  <a class="btn" href="#heroes">Войти во вселенную</a>
+  <a class="btn secondary" href="#mumka">⭐ Найти Мумку</a><button class="btn secondary" onclick="showNotice('Добро пожаловать в Мумка-версию вселенной! 💛')">Секретная кнопка</button>
+ </div>
+</section>
+<section id="heroes">
+ <h2>ПЕРСОНАЖИ</h2><p class="lead">Герои, чьи имена вписаны в золотую летопись вселенной.</p>
+ <div class="grid">
+  <article class="card character" tabindex="0" onclick="showCharacter('adam')" onkeydown="if(event.key==='Enter')showCharacter('adam')"><div class="emblem">👑</div><h3>Тру Адам</h3><p>Легендарный правитель. Символ силы, мудрости и единства империи.</p></article>
+  <article class="card character" tabindex="0" onclick="showCharacter('super')" onkeydown="if(event.key==='Enter')showCharacter('super')"><div class="emblem">⚡</div><h3>Супер Тру Адам</h3><p>Могущественная форма героя, пробуждающаяся в самый важный момент.</p></article>
+  <article class="card character" tabindex="0" onclick="showCharacter('guard')" onkeydown="if(event.key==='Enter')showCharacter('guard')"><div class="emblem">🛡️</div><h3>Страж Империи</h3><p>Хранитель золотых залов и защитник союзников.</p></article>
+ </div>
+</section>
+
+<section id="mumka">
+ <div class="banner mumka-banner"><div class="mumka-face">🟡</div><h2>ОСОБЫЙ ГОСТЬ ВСЕЛЕННОЙ</h2><p class="lead">Знакомься: Мумка — жёлтая фигурка в бинтах с бирюзовой маской!</p><button class="btn" onclick="showCharacter('mumka')">ОТКРЫТЬ ВСЮ ИНФОРМАЦИЮ О МУМКЕ</button></div>
+</section>
+<section id="titans">
+ <h2>ЗАЛ ТИТАНОВ</h2><p class="lead">Самые грандиозные создания TRUE ADAMS UNIVERSE.</p>
+ <div class="banner"><div class="emblem">🌟</div><strong>СУПЕР ТРУ АДАМ — ГИГАТИТАН</strong><p class="lead">Колоссальная легенда. Его появление меняет ход любой истории.</p><button class="btn" onclick="showNotice('ГИГАТИТАН ПРОБУЖДЁН! ⚡')">ПРОБУДИТЬ ТИТАНА</button></div>
+</section>
+<section id="allies">
+ <h2>СОЮЗНИКИ</h2><p class="lead">Великие команды, которые стоят плечом к плечу.</p>
+ <div class="grid">
+  <article class="card"><div class="emblem">🐔</div><h3>Чикен Ганы</h3><p>Отважные бойцы и незаменимые друзья Тру Адамов.</p></article>
+  <article class="card"><div class="emblem">🚪</div><h3>DOORS</h3><p>Таинственные гости из мира дверей. Никогда не знаешь, кто за следующей дверью.</p></article>
+  <article class="card"><div class="emblem">🤝</div><h3>Союзники</h3><p>Каждый участник команды вносит свой вклад в общую легенду.</p></article>
+ </div>
+</section>
+<section id="lore">
+ <h2>ЛЕТОПИСЬ ВСЕЛЕННОЙ</h2><p class="lead">Каждая великая вселенная начинается с одной легенды.</p>
+ <div class="grid">
+  <article class="card"><h3>Глава I — Начало</h3><p>Появляется первый Тру Адам и закладывает основу будущей империи.</p></article>
+  <article class="card"><h3>Глава II — Союз</h3><p>Чикен Ганы и другие герои объединяются ради общей цели.</p></article>
+  <article class="card"><h3>Глава III — Пробуждение</h3><p>Пробуждается Супер Тру Адам. Начинается новая эра.</p></article>
+ </div>
+</section>
+<section><div class="banner"><strong>ТВОЯ ЛЕГЕНДА ЕЩЁ НЕ ЗАКОНЧЕНА</strong><p class="lead">Добро пожаловать в TRUE ADAMS UNIVERSE.</p><button class="btn" onclick="openGame()">🎮 ВСТУПИТЬ ВО ВСЕЛЕННУЮ</button></div></section>
+</main>
+<footer>© TRUE ADAMS UNIVERSE · ФАНАТСКАЯ ВСЕЛЕННАЯ · СОЗДАНО ДЛЯ ЛЕГЕНД</footer>
+<div id="notice" role="status"></div>
+<div class="profile-modal" id="profileModal" aria-hidden="true" onclick="if(event.target===this)closeCharacter()"><article class="profile-card"><button class="profile-close" onclick="closeCharacter()" aria-label="Закрыть">✕</button><div class="profile-icon" id="profileIcon">🟡</div><div class="profile-tag">КАРТОЧКА ПЕРСОНАЖА</div><h2 id="profileName">Мумка</h2><p id="profileDescription"></p><div class="profile-facts" id="profileFacts"></div><button class="btn" onclick="closeCharacter()">← НАЗАД ВО ВСЕЛЕННУЮ</button></article></div>
+<script>
+const characterData={
+ mumka:{icon:'🟡🩹',name:'Мумка',description:'Мумка — та самая жёлтая фигурка в бинтах с бирюзовой маской. Это особенный персонаж нашей вселенной!',facts:[['Внешность','Жёлтая фигурка'],['Одежда','Бинты'],['Маска','Бирюзовая'],['Статус','Легенда сайта'],['Особенность','Уникальная фигурка'],['Секрет','Пока не раскрыт 👀']]},
+ adam:{icon:'👑',name:'Тру Адам',description:'Легендарный правитель и символ единства вселенной.',facts:[['Роль','Правитель'],['Качество','Мудрость'],['Символ','Корона']]},
+ super:{icon:'⚡',name:'Супер Тру Адам',description:'Могущественная форма героя, которая появляется в решающий момент.',facts:[['Роль','Герой'],['Сила','Энергия'],['Статус','Титаническая форма']]},
+ guard:{icon:'🛡️',name:'Страж Империи',description:'Хранитель золотых залов и защитник союзников.',facts:[['Роль','Защитник'],['Место','Империя'],['Символ','Щит']]}};
+function showCharacter(id){const c=characterData[id];if(!c)return;document.getElementById('profileIcon').textContent=c.icon;document.getElementById('profileName').textContent=c.name;document.getElementById('profileDescription').textContent=c.description;document.getElementById('profileFacts').innerHTML=c.facts.map(([a,b])=>`<div><b>${a}</b>${b}</div>`).join('');const m=document.getElementById('profileModal');m.classList.add('open');m.setAttribute('aria-hidden','false')}
+function closeCharacter(){const m=document.getElementById('profileModal');m.classList.remove('open');m.setAttribute('aria-hidden','true')}
+let noticeTimer;
+function showNotice(message){
+ const box=document.getElementById('notice');
+ box.textContent=message; box.style.display='block';
+ clearTimeout(noticeTimer); noticeTimer=setTimeout(()=>box.style.display='none',2600);
+}
+</script>
+
+<div id="gameModal" class="game-modal" aria-hidden="true">
+ <div class="game-shell">
+  <div class="game-top">
+   <div><span class="game-kicker">МИНИ-ИГРА TRUE ADAMS</span><h2>🐔 CHICKEN GAN RUN</h2></div>
+   <button class="game-close" onclick="closeGame()" aria-label="Закрыть игру">✕</button>
+  </div>
+  <div class="game-stats">
+   <div>СЧЁТ <strong id="score">0</strong></div>
+   <div>🪙 CHICKEN COINS <strong id="coins">0</strong></div>
+  </div>
+  <canvas id="gameCanvas" width="900" height="330" aria-label="Игра: Чикен Ган перепрыгивает через КитКат титана"></canvas>
+  <div class="game-help">ПРОБЕЛ / ↑ / НАЖМИ НА ИГРУ — ПРЫЖОК</div>
+  <div class="game-actions">
+   <button class="btn" id="startGameBtn" onclick="startGame()">НАЧАТЬ ИГРУ</button>
+   <button class="btn secondary" onclick="jump()">ПРЫЖОК 🐔</button>
+  </div>
+  <p class="game-message" id="gameMessage">Перепрыгивай через КитКат титана! Каждый перепрыгнутый КитКат = 1 Chicken Coin.</p>
+ </div>
+</div>
+<style>
+.game-modal{display:none;position:fixed;inset:0;z-index:50;background:#050403ed;backdrop-filter:blur(8px);padding:18px;overflow:auto;align-items:center;justify-content:center}
+.game-modal.open{display:flex}
+.game-shell{width:min(980px,100%);background:linear-gradient(145deg,#251b0b,#090909);border:1px solid #d5a33f;border-radius:14px;padding:clamp(14px,3vw,28px);box-shadow:0 0 65px #d49c3040}
+.game-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.game-top h2{margin:5px 0 12px;text-align:left;font-size:clamp(20px,4vw,30px)}
+.game-kicker{color:#d9b65f;font:11px Arial;letter-spacing:2px}
+.game-close{background:#17120a;color:#ffe4a0;border:1px solid #a77a2b;border-radius:7px;font-size:22px;width:42px;height:42px;cursor:pointer}
+.game-stats{display:flex;justify-content:space-between;gap:10px;background:#090806;border:1px solid #76551f;border-radius:8px;padding:12px 16px;margin:10px 0}
+.game-stats div{font:12px Arial;color:#cdbb91;letter-spacing:1px}
+.game-stats strong{color:#ffe08a;font-size:20px;margin-left:8px}
+#gameCanvas{display:block;width:100%;height:auto;background:linear-gradient(#171b2b,#34220e 72%,#5a3a17 72%,#211506);border:1px solid #9b702c;border-radius:8px;touch-action:manipulation}
+.game-help{text-align:center;color:#d3bd8c;font:11px Arial;letter-spacing:1px;margin-top:12px}
+.game-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:8px}
+.game-message{text-align:center;color:#f1d99d;font:14px Arial;line-height:1.5;margin:10px 0 0}
+@media(max-width:600px){.game-modal{padding:8px}.game-stats{padding:10px}.game-stats div{font-size:10px}.game-stats strong{font-size:17px}}
+</style>
+<script>
+(() => {
+ const modal=document.getElementById('gameModal');
+ const canvas=document.getElementById('gameCanvas');
+ const ctx=canvas.getContext('2d');
+ const scoreEl=document.getElementById('score');
+ const coinsEl=document.getElementById('coins');
+ const message=document.getElementById('gameMessage');
+ const startBtn=document.getElementById('startGameBtn');
+ const W=canvas.width,H=canvas.height,ground=258;
+ let running=false,raf=0,score=0,coins=0,speed=6,frame=0,obstacles=[],player={x:105,y:ground-48,w:44,h:48,vy:0,onGround:true},lastTime=0;
+ function rounded(x,y,w,h,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
+ function drawScene(){
+  ctx.clearRect(0,0,W,H);
+  // stars and distant palace
+  ctx.fillStyle='#f8d77a';[[90,45],[220,80],[420,38],[620,65],[790,35]].forEach(([x,y])=>{ctx.beginPath();ctx.arc(x,y,2,0,Math.PI*2);ctx.fill()});
+  ctx.fillStyle='#17100a';ctx.fillRect(0,190,W,68);
+  ctx.fillStyle='#3b2b15';for(let x=0;x<W;x+=90){ctx.fillRect(x,198,48,60);ctx.fillRect(x+12,178,24,20)}
+  ctx.fillStyle='#bd8b36';ctx.fillRect(0,ground,W,4);
+  ctx.fillStyle='#6a471b';for(let x=0;x<W;x+=48){ctx.fillRect((x-(frame*speed*.7)%48),ground+13,24,3)}
+ }
+ function drawChicken(){
+  ctx.save();ctx.translate(player.x,player.y);
+  // stylized running chicken
+  ctx.fillStyle='#fff0c4';ctx.beginPath();ctx.ellipse(23,28,19,18,0,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#f4c64f';ctx.beginPath();ctx.arc(29,12,14,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#d84a32';ctx.beginPath();ctx.arc(22,0,5,0,Math.PI*2);ctx.arc(31,-2,5,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#f28b25';ctx.beginPath();ctx.moveTo(41,12);ctx.lineTo(52,17);ctx.lineTo(41,21);ctx.fill();
+  ctx.fillStyle='#17110a';ctx.beginPath();ctx.arc(34,8,2.5,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#f0a62d';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(15,43);ctx.lineTo(12,49);ctx.moveTo(30,43);ctx.lineTo(33,49);ctx.stroke();
+  ctx.restore();
+ }
+ function drawKitKat(o){
+  ctx.save();ctx.translate(o.x,o.y);
+  rounded(0,0,o.w,o.h,9,'#6f1e20');
+  rounded(5,5,o.w-10,o.h-10,6,'#a82e2d');
+  ctx.fillStyle='#f6dfad';ctx.font='bold 19px Georgia';ctx.textAlign='center';ctx.fillText('KITKAT',o.w/2,o.h/2+6);
+  ctx.fillStyle='#f5d06b';ctx.font='bold 10px Arial';ctx.fillText('TITAN',o.w/2,o.h/2+22);
+  ctx.restore();
+ }
+ function draw(){
+  drawScene();obstacles.forEach(drawKitKat);drawChicken();
+  ctx.fillStyle='#f9e4ad';ctx.font='bold 15px Arial';ctx.textAlign='left';ctx.fillText('🐔 CHICKEN GAN',18,28);
+ }
+ function reset(){
+  score=0;coins=0;speed=6;frame=0;obstacles=[];player.y=ground-player.h;player.vy=0;player.onGround=true;
+  scoreEl.textContent='0';coinsEl.textContent='0';draw();
+ }
+ function spawn(){
+  const h=48+Math.random()*22,w=45+Math.random()*15;
+  obstacles.push({x:W+20,y:ground-h,w,h,passed:false});
+ }
+ function endGame(){
+  running=false;cancelAnimationFrame(raf);startBtn.textContent='ИГРАТЬ СНОВА';
+  message.textContent='КитКат титан догнал Чикен Гана! Итог: '+score+' Chicken Coins. Попробуй ещё раз!';
+ }
+ function tick(t){
+  if(!running)return;
+  const dt=Math.min((t-lastTime)/16.67||1,2);lastTime=t;frame+=dt;
+  if(frame%Math.max(48,Math.floor(92-speed*3))<dt)spawn();
+  player.vy+=.72*dt;player.y+=player.vy*dt;
+  if(player.y>=ground-player.h){player.y=ground-player.h;player.vy=0;player.onGround=true}
+  obstacles.forEach(o=>{
+   o.x-=speed*dt;
+   if(!o.passed&&o.x+o.w<player.x){o.passed=true;score++;coins++;scoreEl.textContent=score;coinsEl.textContent=coins}
+   const hit=player.x+player.w-8>o.x+5&&player.x+8<o.x+o.w-5&&player.y+player.h-5>o.y+5;
+   if(hit)endGame();
+  });
+  obstacles=obstacles.filter(o=>o.x+o.w>-10);
+  speed=Math.min(10,speed+.001*dt);
+  draw();
+  if(running)raf=requestAnimationFrame(tick);
+ }
+ window.startGame=function(){cancelAnimationFrame(raf);reset();running=true;lastTime=performance.now();startBtn.textContent='НАЧАТЬ ЗАНОВО';message.textContent='ПОБЕЖАЛИ! Перепрыгивай через КитКат титана!';raf=requestAnimationFrame(tick)};
+ window.jump=function(){if(!modal.classList.contains('open'))return;if(!running){window.startGame();return}if(player.onGround){player.vy=-14;player.onGround=false}};
+ window.openGame=function(){modal.classList.add('open');modal.setAttribute('aria-hidden','false');reset();message.textContent='Нажми «Начать игру», затем прыгай через КитКат титана!';startBtn.textContent='НАЧАТЬ ИГРУ'};
+ window.closeGame=function(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');running=false;cancelAnimationFrame(raf)};
+ document.addEventListener('keydown',e=>{if(e.code==='Space'||e.code==='ArrowUp'){if(modal.classList.contains('open')){e.preventDefault();window.jump()}}if(e.code==='Escape'){window.closeGame();closeCharacter()}});
+ canvas.addEventListener('pointerdown',()=>window.jump());
+ draw();
+})();
+</script>
+
+</body>
+</html>
